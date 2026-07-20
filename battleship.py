@@ -1,15 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def init_grid():
-    """
-    Generate start grid
-
-    :return: grid with 10x10 sizes
-    """
-    return [[' ' for _ in range(10)] for _ in range(10)]
-
-
 def init_coordinate_boats():
     """
     Init all coordinates to each boats
