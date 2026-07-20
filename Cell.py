@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from dataclasses import dataclass
+from typing import LiteralString
 from StateCell import StateCell
 
 
@@ -12,7 +13,7 @@ class Cell:
     def __init__(self):
         self.state_init_cell = StateCell.VIDE
 
-    def __str__(self):
+    def __str__(self) -> LiteralString:
         match self.state_init_cell:
             case StateCell.VIDE:
                 return ' '

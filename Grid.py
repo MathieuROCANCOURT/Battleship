@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from typing import LiteralString
 
+from typing import LiteralString
 from Cell import Cell
 
 
