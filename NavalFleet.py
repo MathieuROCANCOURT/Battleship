@@ -15,3 +15,6 @@ class NavalFleet:
                 Boat({(9, 5): True, (9, 6): True})
             ]
         self.naval_fleet = naval_fleet
+
+    def is_end_game(self):
+        return any(ship.is_shoot_down() for ship in self.naval_fleet)
