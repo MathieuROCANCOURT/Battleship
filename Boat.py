@@ -11,5 +11,8 @@ class Boat:
     def get_ship_coord(self) -> list[tuple[int, int]]:
         return list(self.dict_coordinate_boats.keys())
 
+    def is_shoot(self, line, column):
+        return (line, column) in self.get_ship_coord()
+
     def is_shoot_down(self) -> bool:
         return any(list(self.dict_coordinate_boats.values()))
