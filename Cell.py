@@ -11,3 +11,14 @@ class Cell:
 
     def __init__(self):
         self.state_init_cell = StateCell.VIDE
+
+    def __str__(self):
+        match self.state_init_cell:
+            case StateCell.VIDE:
+                return ' '
+            case StateCell.TOUCHE:
+                return 'o'
+            case StateCell.NON_TOUCHE:
+                return 'x'
+            case StateCell.COULER:
+                return 'S'
