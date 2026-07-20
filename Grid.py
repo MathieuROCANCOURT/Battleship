@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from typing import LiteralString
 
 from Cell import Cell
 
@@ -9,7 +10,7 @@ class Grid:
         self.size = size
         self.grid_game = [[Cell() for _ in range(self.size)] for _ in range(self.size)]
 
-    def __str__(self):
+    def __str__(self) -> LiteralString:
         separate_line = ('+' + '-' * 3) * (self.size + 1) + "+\n"
         output_grid = ' ' * 4 + separate_line[4:] + ' ' * 4 + '|'
 
