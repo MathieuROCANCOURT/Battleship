@@ -6,12 +6,12 @@ from Cell import Cell
 
 class Grid:
     def __init__(self, size: int = 10):
-        self.size = size
-        self.grid_game = [[Cell() for _ in range(self.size)] for _ in range(self.size)]
+        self.size: int = size
+        self.grid_game: list[list[Cell]] = [[Cell() for _ in range(self.size)] for _ in range(self.size)]
 
     def __str__(self) -> str:
-        separate_line = ('+' + '-' * 3) * (self.size + 1) + "+\n"
-        output_grid = ' ' * 4 + separate_line[4:] + ' ' * 4 + '|'
+        separate_line: str = ('+' + '-' * 3) * (self.size + 1) + "+\n"
+        output_grid: str = ' ' * 4 + separate_line[4:] + ' ' * 4 + '|'
 
         for index_col in range(self.size):
             output_grid += ' ' + chr(index_col + ord('A')) + ' ' + '|'
