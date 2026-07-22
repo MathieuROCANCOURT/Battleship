@@ -2,18 +2,14 @@
 # -*- coding: utf-8 -*-
 
 from dataclasses import dataclass
-from typing import LiteralString
 from StateCell import StateCell
 
 
 @dataclass
 class Cell:
-    state_init_cell: StateCell
+    state_init_cell: StateCell = StateCell.VIDE
 
-    def __init__(self):
-        self.state_init_cell = StateCell.VIDE
-
-    def __str__(self) -> LiteralString:
+    def __str__(self) -> str:
         match self.state_init_cell:
             case StateCell.VIDE:
                 return ' '
