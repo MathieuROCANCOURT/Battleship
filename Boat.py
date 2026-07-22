@@ -13,7 +13,7 @@ class Boat:
     def get_ship_coord(self) -> list[tuple[int, int]]:
         return list(self.dict_coordinate_boats.keys())
 
-    def is_shoot(self, line, column):
+    def is_shoot(self, line: int, column: int) -> bool:
         return (line, column) in self.get_ship_coord()
 
     def is_shoot_down(self) -> bool:
@@ -24,12 +24,12 @@ class Boat:
             self.dict_coordinate_boats[(line, column)] = True
 
             if self.is_shoot_down():
-                for row, column in self.get_ship_coord():
-                    grid.grid_game[line][column] = StateCell.COULER
+                for row_ship, column_ship in self.get_ship_coord():
+                    grid.grid_game[row_ship][column_ship].state_cell = StateCell.COULER
             else:
-                grid.grid_game[line][column] = StateCell.TOUCHE
+                grid.grid_game[line][column].state_cell = StateCell.TOUCHE
 
         else:
-            grid.grid_game[line][column] = StateCell.NON_TOUCHE
+            grid.grid_game[line][column].state_cell = StateCell.NON_TOUCHE
 
         return grid

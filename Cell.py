@@ -7,10 +7,10 @@ from StateCell import StateCell
 
 @dataclass
 class Cell:
-    state_init_cell: StateCell = StateCell.VIDE
+    state_cell: StateCell = StateCell.VIDE
 
     def __str__(self) -> str:
-        match self.state_init_cell:
+        match self.state_cell:
             case StateCell.VIDE:
                 return ' '
             case StateCell.TOUCHE:
