@@ -23,3 +23,13 @@ class InputUser:
                 and 'A' <= self.coordinate[0] <= chr(ord('A') + size_board)
                 and self.coordinate[1:].isdigit()
                 and 0 <= int(self.coordinate[1:]) <= size_board)
+
+    @staticmethod
+    def convert_letter_column_to_index(letter: str):
+        """
+        Convert letter to index to affect the now data in grid in battleship
+
+        :param letter: A column letter on Battleship
+        :return: A number corresponding to the index
+        """
+        return int(ord(letter) - ord('A'))
