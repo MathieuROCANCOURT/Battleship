@@ -5,7 +5,7 @@ class InputUser:
     def __init__(self):
         self.coordinate = None
 
-    def input_user(self, size_board: int = 10) -> tuple[str, int] | None:
+    def input_user(self, size_board: int = 10) -> tuple[int, int] | None:
         """
             Input user to write the coordinate shot
 
@@ -14,7 +14,7 @@ class InputUser:
         self.coordinate = input("Saisir les coordonnées d'une case:")
 
         if self.is_correct_input(size_board):
-            return self.coordinate[0], int(self.coordinate[1:])
+            return self.convert_letter_column_to_index(self.coordinate[0]), int(self.coordinate[1:])
 
         return None
 
