@@ -22,7 +22,7 @@ class InputUser:
         return (2 <= len(self.coordinate) <= 3
                 and 'A' <= self.coordinate[0] <= chr(ord('A') + size_board)
                 and self.coordinate[1:].isdigit()
-                and 0 <= int(self.coordinate[1:]) <= size_board)
+                and 0 < int(self.coordinate[1:]) <= size_board)
 
     @staticmethod
     def convert_letter_column_to_index(letter: str):
