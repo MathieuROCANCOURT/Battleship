@@ -23,4 +23,4 @@ class NavalFleet:
         return None
 
     def is_end_game(self):
-        return any(ship.is_shoot_down() for ship in self.naval_fleet)
+        return all(ship.is_shoot_down() for ship in self.naval_fleet)
