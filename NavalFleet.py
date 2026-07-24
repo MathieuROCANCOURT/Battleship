@@ -16,5 +16,11 @@ class NavalFleet:
             ]
         self.naval_fleet = naval_fleet
 
+    def boat_shoot(self, line: int, column: int) -> Boat | None:
+        for boat in self.naval_fleet:
+            if boat.is_shoot(line + 1, column + 1):
+                return boat
+        return None
+
     def is_end_game(self):
         return any(ship.is_shoot_down() for ship in self.naval_fleet)
