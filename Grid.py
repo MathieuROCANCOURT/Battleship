@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from Cell import Cell
+from NavalFleet import NavalFleet
+from StateCell import StateCell
 
 
 class Grid:
@@ -26,3 +28,19 @@ class Grid:
 
         output_grid += separate_line
         return output_grid
+
+    def change_state(self, line: int, column: int, naval_fleet: NavalFleet):
+        boat_target = naval_fleet.boat_shoot(line, column)
+        if boat_target is not None:
+            naval_fleet.boat_shoot(line, column).dict_coordinate_boats[(line + 1, column + 1)] = True
+
+            if boat_target.is_shoot_down():
+                for row_ship, column_ship in boat_target.get_ship_coord():
+                    self.grid_game[row_ship - 1][column_ship - 1].state_cell = StateCell.COULER
+            else:
+                self.grid_game[line][column].state_cell = StateCell.TOUCHE
+
+        else:
+            self.grid_game[line][column].state_cell = StateCell.NON_TOUCHE
+
+        return naval_fleet
